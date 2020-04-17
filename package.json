@@ -1,6 +1,6 @@
 {
-  "name": "konva",
-  "version": "4.2.2-with-shadowinset",
+  "name": "konva-with-shadowinset",
+  "version": "4.2.2",
   "author": "Anton Lavrenov",
   "files": [
     "README.md",
