@@ -60,6 +60,7 @@ export interface ShapeConfig extends NodeConfig {
   lineCap?: string;
   sceneFunc?: (con: Context, shape: Shape) => void;
   hitFunc?: (con: Context, shape: Shape) => void;
+  shadowInset?: boolean;
   shadowColor?: string;
   shadowBlur?: number;
   shadowOffset?: Vector2d;
@@ -801,6 +802,7 @@ export class Shape<Config extends ShapeConfig = ShapeConfig> extends Node<
   lineJoin: GetSet<string, this>;
   perfectDrawEnabled: GetSet<boolean, this>;
   sceneFunc: GetSet<ShapeConfigHandler<this>, this>;
+  shadowInset: GetSet<boolean, this>;
   shadowColor: GetSet<string, this>;
   shadowEnabled: GetSet<boolean, this>;
   shadowForStrokeEnabled: GetSet<boolean, this>;
@@ -1165,6 +1167,15 @@ Factory.addGetterSetter(Shape, 'shadowOffsetX', 0, getNumberValidator());
  */
 
 Factory.addGetterSetter(Shape, 'shadowOffsetY', 0, getNumberValidator());
+
+/**
+ * get/set shadow inset
+ * @name Konva.Shape#shadowInset
+ * @method
+ * @param {Booean} inset
+ * @returns {Boolean}
+ */
+Factory.addGetterSetter(Shape, 'shadowInset', false, getBooleanValidator());
 
 /**
  * get/set shadow offset y
