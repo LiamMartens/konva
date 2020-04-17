@@ -52,6 +52,7 @@ var CONTEXT_PROPERTIES = [
   'strokeStyle',
   'shadowColor',
   'shadowBlur',
+  'shadowInset',
   'shadowOffsetX',
   'shadowOffsetY',
   'lineCap',
@@ -796,6 +797,7 @@ export class SceneContext extends Context {
     var util = Util,
       color = util.get(shape.getShadowRGBA(), 'black'),
       blur = util.get(shape.getShadowBlur(), 5),
+      inset = util.get(shape.getShadowInset(), false),
       offset = util.get(shape.getShadowOffset(), {
         x: 0,
         y: 0
@@ -812,6 +814,7 @@ export class SceneContext extends Context {
     );
     this.setAttr('shadowOffsetX', offset.x * scaleX);
     this.setAttr('shadowOffsetY', offset.y * scaleY);
+    this.setAttr('shadowInset', inset);
   }
 }
 
